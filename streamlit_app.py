@@ -33,7 +33,7 @@ ingredients_list = st.multiselect(
 
 if ingredients_list:
     ingredients_string = ''
-    search_on = elephant.loc[elephant['FRUIT_NAME'] == fruit_chosen].iloc[0]
+    search_on = elephant.loc[elephant['FRUIT_NAME'] == fruit_chosen]
     st.write('The search value for ', fruit_chosen, ' is ', search_on, '.')
 
     for fruit_chosen in ingredients_list:
