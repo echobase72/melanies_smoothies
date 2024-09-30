@@ -1,8 +1,8 @@
 # Import python packages
 import streamlit as st
+import pandas as pd
 from snowflake.snowpark.functions import col
 import requests
-import pandas as pd
 
 # Write directly to the app
 st.title("Customize Your Smoothie!")
@@ -20,8 +20,8 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 # st.stop()
 
 # Convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
-# pd_df = my_dataframe.to_pandas()
-pd_df = pd.DataFrame(my_dataframe, columns = ['FRUIT_NAME', 'SEARCH_ON'])
+pd_df = my_dataframe.to_pandas()
+# pd_df = pd.DataFrame(my_dataframe, columns = ['FRUIT_NAME', 'SEARCH_ON'])
 # st.dataframe(pd_df)
 # st.stop()
 
