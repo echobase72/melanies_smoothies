@@ -21,7 +21,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 
 # Convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
 # pd_df = my_dataframe.to_pandas()
-pd_df = pd.dataframe(my_dataframe, columns = ['FRUIT_NAME', 'SEARCH_ON'])
+pd_df = pd.DataFrame(my_dataframe, columns = ['FRUIT_NAME', 'SEARCH_ON'])
 # st.dataframe(pd_df)
 # st.stop()
 
